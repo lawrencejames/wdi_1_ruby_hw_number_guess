@@ -7,4 +7,13 @@ puts "Guess and enter a number between 1 and 10.\nYou only get three (3) gueses.
 #generates random number between 1-10.
 #need to figure out how to not have zero
 random_number = rand(10)
-puts random_number #output only for testing
+#if random number equals 0 add 1
+if random_number == 0
+  #puts "hey add 1 to this"
+  new_number = random_number + 1
+  puts new_number
+  new_number = random_number
+else
+  puts random_number
+ end
+#puts random_number #output only for testing
