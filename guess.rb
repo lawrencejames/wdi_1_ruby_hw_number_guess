@@ -11,9 +11,20 @@ random_number = rand(10)
 if random_number == 0
   #puts "hey add 1 to this"
   new_number = random_number + 1
-  puts new_number
+  puts new_number #output only for testing
   new_number = random_number
 else
-  puts random_number
+  puts random_number #output only for testing
  end
-#puts random_number #output only for testing
+
+ #user interface
+ puts "what is your first guess?\n"
+ puts "Enter here       \n"
+
+ first_guess = gets.chomp!.to_i
+ second_guess = gets.chomp!.to_i
+ third_guess = gets.chomp!.to_i
+
+puts first_guess
+puts second_guess
+puts third_guess
