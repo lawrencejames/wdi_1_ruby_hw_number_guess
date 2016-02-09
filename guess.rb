@@ -1,30 +1,34 @@
 # Your code goes here
-
 #Rules - Tell the player the rules
-puts "Here are the rules to play the game!"
+puts "\n\n\nHere are the rules to play the game!"
+puts "Guess and enter a number between 1 and 10."
+puts "You only get three (3) gueses."
+puts "Guess correctly and you get undying praise"
+puts "Guess wrong and will look at you with derision and contempt!\n\n\n\n\n"
 
-puts "Guess and enter a number between 1 and 10.\nYou only get three (3) gueses.\nGuess correctly and you get undying praise.\nGuess wrong and will look at you with derision and contempt!\n"
-#generates random number between 1-10.
-#need to figure out how to not have zero
-random_number = rand(10)
-#if random number equals 0 add 1
-if random_number == 0
-  #puts "hey add 1 to this"
-  new_number = random_number + 1
-  puts new_number #output only for testing
-  new_number = random_number
-else
-  puts random_number #output only for testing
- end
+#Generates random number between 1-10
+random_number = rand(1...10)
+#sets variable of Max number of guesses
+max_number_of_guesses = 3
+puts "#{random_number}" #only used during testing
 
- #user interface
- puts "what is your first guess?\n"
- puts "Enter here       \n"
+guess_num = 0
+while guess_num <= max_number_of_guesses
+  #gets user input
+  puts "What is your guess?"
+  user_guess = gets.chomp!.to_i
+  guess_num = guess_num + 1
+  case
+  when user_guess < random_number
+    puts "Try again you are a little low"
+  when user_guess > random_number
+    puts "you are a little high try again."
+  when user_guess = random_number
+    puts "You are a great guesser - You Win!"
+    guess_num = guess_num + 2
+  else
+    puts "Sorry you are all out of guesses!"
+    break
+  end
 
- first_guess = gets.chomp!.to_i
- second_guess = gets.chomp!.to_i
- third_guess = gets.chomp!.to_i
-
-puts first_guess
-puts second_guess
-puts third_guess
+end
